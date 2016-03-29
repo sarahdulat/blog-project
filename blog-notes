@@ -1,0 +1,57 @@
+wait for click of $img
+get src attr of click target
+set on lightbox $img
+show light box
+store index
+
+Wait for click on NEXT
+increment index
+fetch new src
+
+var $entries = $('.entry img')
+var imgs = [];
+for (var i=0; i < entries.length, i++) {
+var src = entries[i].attr('src')
+imgs.push(src);
+}
+
+$('.next').con('click', function(e) {
+var $target = $(e.target);
+……
+}
+
+JSON
+var posts = [{
+title: " ",
+date: new Date( ),
+imgSrc: " ",
+copy: " ",
+tags: [" ", " ", " ",]
+}, {
+…}]
+
+
+each post
+
+$post = $('<div class="post"></div>');
+if (post.title) {
+$post.append($('<h1> + post.title + '<h1>')
+}
+if (post.date) {
+……
+}
+if (post.copy) {
+$post.append($(post.copy))
+}
+
+if has tag name {
+$('post_wrapper').append($post);
+}
+
+if tag name undefined
+
+wait for tag click
+delete all posts from DOM
+get tag name
+re-render all posts
+halt on those w/o tag
