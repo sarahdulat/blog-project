@@ -4,11 +4,13 @@
 	box-sizing: border-box;
 }
 
-body {
+html, body {
 	margin: 0;
 	padding: 0;
+}
+
+body {
 	font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
-	/*background-color: #F2F2F2;*/
 }
 
 a {
@@ -22,21 +24,193 @@ a {
 .container {
 	margin: 0 auto;
 	width: 900px;
+	/*position: relative;*/
 }
 
 /*--HEADER--*/
 
 header {
-	/*position: absolute;*/
-	/*top: 0;*/
 	width: 900px;
-	/*left: 0;*/
-	padding: 20px;
-	background-color: #F5F5F5;
+	padding: 10px 20px;
+	background-image: url('../img/arraysandbugs-background.jpg');
+	background-size: cover;
+	background-position: center center;
 }
 
 header h1 {
-	/*padding-left: 18px;*/
+	font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+	font-size: 48px;
+	text-transform: uppercase;
+	font-weight: 100;
+}
+
+header a {
+	color: #FFFFFF;
+}
+
+header a:hover {
+	color: #F6DEFF;
+	transition: color .5s ease;
+}
+
+/*MAIN*/
+
+main {
+	width: 650px;
+	margin: 10px auto;
+	padding: 20px;
+	line-height: 28px;
+	float: left;
+}
+
+.post {
+	padding: 20px 0 20px;
+	margin: 0 auto;
+	border-bottom: solid 1px #000000;
+}
+
+.post img {
+	max-width: 100%;
+}
+
+/*SIDEBAR*/
+
+aside {
+	width: 250px;
+	background-color: #F6DEFF;
+	position: absolute;
+	top: 144px;
+	bottom: 0;
+	/*right: 0;*/
+}
+
+aside h3 {
+	font-weight: 100;
+	text-transform: uppercase;
+	padding: 0 20px;
+}
+
+ul.filter {
+	list-style-type: none;
+	padding: 0 20px 20px;
+	margin: 0;
+	border-bottom: solid 2px #FFFFFF;
+}
+
+.filter li {
+	display: block;
+	text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 18px;
+}
+
+.filter a {
+	color: #000000;
+	transition: background-color 0.25s ease;
+}
+
+.filter a:hover {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.filter li:hover, .mobile li:hover {
+}
+
+select {
+	margin: 0 20px 20px;
+}
+
+.icon-box {
+	background-color: #A78AB3;
+	margin: 0;
+	padding: 20px 0;
+	color: #FFFFFF;
+	border-bottom: solid 2px #FFFFFF;
+	border-top: solid 2px #FFFFFF;
+}
+
+.icon-box h3 {
+	margin: 0;
+}
+
+ul.social {
+	list-style-type: none;
+	display: inline-block;
+	margin: 0;
+	padding: 0 20px;
+}
+
+.social li {
+	float: left;
+	margin-right: 10px;
+}
+
+.social img {
+	height: 32px;
+	width: 32px;
+}
+
+/*TOASTER*/
+
+.toaster {
+	width: 250px;
+	background-color: rgba(198, 198, 198, 0.7);
+	border-radius: 10px 10px 0 0;
+	border: solid 1px #A78AB3;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+
+.toaster h4 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+form {
+	padding: 0 20px;
+	margin-bottom: 20px;
+}
+
+input {
+	padding: 5px;
+	margin: 0 0 5px;
+	border: 1px solid #A78AB3;
+	width: 200px;
+	text-transform: uppercase;
+}
+
+button {
+	padding: 8px;
+	background-color: #A78AB3;
+	color: #FFFFFF;
+	border: none;
+	width: 100px;
+	text-transform: uppercase;
+	cursor: pointer;
+	border: 1px solid #A78AB3;
+	transition: all 0.5s ease;
+}
+
+button:hover {
+	background-color: #F6DEFF;
+	color: #000000;
+}
+
+.close {
+	text-align: right;
+	padding: 5px 5px 0 0;
+}
+
+.close a {
+	color: #000000;
+	transition: color 0.25s ease;
+}
+
+.close a:hover {
+	color: #A78AB3;
 }
 
 /*BURGER MENU*/
@@ -71,52 +245,4 @@ header h1 {
 	padding: 0 5px;
 	margin-right: 32px;
 	transition: background-color 0.5s ease;
-}
-
-/*MAIN*/
-
-main {
-	width: 650px;
-	margin: 10px auto;
-	padding: 20px;
-	line-height: 28px;
-	float: left;
-}
-
-.post {
-	padding: 20px 0 20px;
-	margin: 0 auto;
-	border-bottom: solid 1px #000000;
-}
-
-.post img {
-	max-width: 100%;
-}
-
-/*SIDEBAR*/
-
-aside {
-	width: 250px;
-	float: right;
-	/*margin: 10px auto;*/
-	padding: 20px 20px;
-	background-color: #BB92FF;
-}
-
-ul.desktop {
-	list-style-type: none;
-	list-style-position:inside;
-	padding: 0;
-	margin: 0;
-}
-
-.desktop li {
-	display: block;
-	text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1px;
-    transition: background-color 0.5s ease;
-}
-
-.desktop li:hover, .mobile li:hover {
 }
