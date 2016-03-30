@@ -56,8 +56,14 @@ $('document').ready(function() {
 		$post.append($(post.tags));
 	}
 
-	$('.close').click(function(){
+	$('div.toaster').delay(3000).slideDown(500);	
+
+	$('.close, #submit').click(function(){
 					close_box();
 				});
+
+	$('#submit').click(function(){
+	alert("Thank you for keeping in touch!");
+	});
 
 });
