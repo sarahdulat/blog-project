@@ -74,6 +74,7 @@ header h1 a:hover {
 
 .mobile a {
 	color: #000000;
+	text-transform: uppercase;
 }
 
 .dropdown ul {
@@ -144,7 +145,7 @@ aside {
 	width: 250px;
 	background-color: #F6DEFF;
 	position: absolute;
-	/*height: 100%;*/
+	height: 100%;
 	top: 144px;
 	bottom: 0;
 	right: 0;
@@ -230,7 +231,7 @@ ul.social {
 	border: solid 1px #A78AB3;
 	position: fixed;
 	bottom: 0;
-	right: 20;	
+	right: 1;	
 	text-align: center;
 }
 
@@ -298,6 +299,7 @@ button:hover {
 	aside {
 		display: none;
 	}
+
 		.mobile {
 		display: block;
 	}

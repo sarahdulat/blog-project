@@ -44,11 +44,9 @@ if (post.copy) {
 $post.append($(post.copy))
 }
 
-if has tag name {
+if has tag name OR tag name undefined {
 $('post_wrapper').append($post);
 }
-
-if tag name undefined
 
 wait for tag click
 delete all posts from DOM

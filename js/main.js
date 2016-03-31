@@ -63,18 +63,15 @@ $('document').ready(function() {
 		}
 
 		// // FIX THIS :)
-	// 	if (postConfig.tags) {
+		if (postConfig.tags) {
 
-	// 		for (var j = 0; j < postConfig.tags.length; j++) {
+			for (var j = 0; j < postConfig.tags.length; j++) {
 
-	// 			var postTag = postConfig.tags[j];
+				var postTag = postConfig.tags[j];
 
-	// 		$post.append($(postConfig.tags));
-	// 	}
-	// }
-
-		// if no tag or post has tag
-
+			$post.append($('<p>' + postConfig.tags[j] + '</p>'));
+		}
+	}
 		$('.posts').append($post);
 
 	}
@@ -92,6 +89,12 @@ $('document').ready(function() {
 	$('#submit').click(function(){
 	alert("Thank you for signing up!");
 	return false;
+	});
+
+	// BURGER-SHOW
+
+	$('#burger-show').click(function() {
+		$('.dropdown').slideToggle(800);
 	});
 
 });
