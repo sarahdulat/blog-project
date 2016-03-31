@@ -62,14 +62,13 @@ $('document').ready(function() {
 			$post.append($(postConfig.copy));
 		}
 
-		// // FIX THIS :)
 		if (postConfig.tags) {
 
 			for (var j = 0; j < postConfig.tags.length; j++) {
 
 				var postTag = postConfig.tags[j];
 
-			$post.append($('<p>' + postConfig.tags[j] + '</p>'));
+			$post.append($('<li>' + postConfig.tags[j] + '</li>'));
 		}
 	}
 		$('.posts').append($post);
@@ -95,6 +94,23 @@ $('document').ready(function() {
 
 	$('#burger-show').click(function() {
 		$('.dropdown').slideToggle(800);
+	});
+
+	// BACK TO TOP
+
+			//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.backToTop').fadeIn();
+		} else {
+			$('.backToTop').fadeOut();
+		}
+	});
+	
+	//Click event to scroll to top
+	$('.backToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
 	});
 
 });
