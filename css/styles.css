@@ -146,6 +146,10 @@ main {
 	font-size: 12px;
 }
 
+.post a {
+	color: #A78AB3;
+}
+
 /*SIDEBAR*/
 
 aside {

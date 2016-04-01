@@ -61,7 +61,7 @@ $('document').ready(function() {
 
 				var postTag = postConfig.tags[j];
 
-			$post.append($('<li>' + postConfig.tags[j] + '</li>'));
+			$post.append($('<a href="javascript:;">' + '<li>' + postConfig.tags[j] + '</li>' + '</a>'));
 		}
 	}
 		$('.posts').append($post);
@@ -70,21 +70,31 @@ $('document').ready(function() {
 
 	// FILTER POSTS
 
-	$('ul.filter li').click(function() {
+		$('ul.filter li').on('click', function(e) {
 
-		$('.posts').remove();
+		var target = $(e.target);
+		var tagName = target.attr('id');
 
-		// $('ul.filter li').on('click', function(e) {
+		$('.post').filter(':contains(tagName)').remove();
 
-		// var target = $(e.target);
-		// var tagName = target.html();
+		// $('.post').hide();
+		// $('div.post:contains(tagName)').show(300);
+
+	});
+
+	// 	var tagName = $(this).html();
+	// 	$posts.isotope({filter: tagName});
+	// 	return false;
+	// });
+
+		// $('.posts').filter(function(index) {
+		// 	return $(this).length === 1;
+		// })
 
 		// $(postConfig.tags).attr(tagName);
 
 		// $('.posts').append($post);
 
 	// });
-
-	});
 
 	});
