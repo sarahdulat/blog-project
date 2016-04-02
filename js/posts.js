@@ -69,18 +69,28 @@ $('document').ready(function() {
 	}
 
 	// FILTER POSTS
+		$('ul.filter li').click(function() {
 
-		$('ul.filter li').on('click', function(e) {
+		tagName = $(this).attr('class');
 
-		var target = $(e.target);
-		var tagName = target.attr('id');
+		$(".post").addClass("hidden");
+        $(".post:contains('" + tagName + "')").removeClass("hidden");
 
-		$('.post').filter(':contains(tagName)').remove();
-
-		// $('.post').hide();
-		// $('div.post:contains(tagName)').show(300);
 
 	});
+
+});
+
+		// var target = $(e.target);
+		// var tagName = target.text();
+
+		// $(".post").addClass("hidden");
+  //       $(".post:contains('" + tagName + "')").removeClass("hidden");
+
+		// $('div.posts:contains("'+tagName+'"")').remove();
+
+		// $('.post').hide(300);
+		// $('.post').show(300, ('div.post:contains(tagName)'));
 
 	// 	var tagName = $(this).html();
 	// 	$posts.isotope({filter: tagName});
@@ -97,4 +107,4 @@ $('document').ready(function() {
 
 	// });
 
-	});
+	
