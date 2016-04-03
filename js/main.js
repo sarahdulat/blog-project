@@ -10,25 +10,25 @@ function close_box()
 	$('div.toaster').delay(3000).slideDown(500);	
 
 	$('.close, #submit').click(function(){
-					close_box();
-				});
+		close_box();
+		return false;
+	});
 
 	// SUBMIT
 
 	$('#submit').click(function(){
 	alert("Thank you for signing up!");
-	return false;
 	});
 
 	// BURGER-SHOW
 
-	$('#burger-show').click(function() {
-		$('.dropdown').slideToggle(800);
+	$('#burger-show, ul.mobile-filter li').click(function() {
+		$('.dropdown').slideToggle(10);
 	});
 
 	// BACK TO TOP
 
-			//Check to see if the window is top if not then display button
+		//Check to see if the window is top if not then display button
 	$(window).scroll(function(){
 		if ($(this).scrollTop() > 100) {
 			$('.backToTop').fadeIn();
@@ -42,3 +42,6 @@ function close_box()
 		$('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
+
+
+
