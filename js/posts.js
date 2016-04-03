@@ -74,8 +74,10 @@ $('document').ready(function() {
 		var target = $(e.target);
 		var tagName = target.text();
 
-		function sortPosts(tagName) {
-		$(".post").filter(":contains("+ tagName +")");
+		// $('.post').remove();
+
+		if (posts.tags === tagName) {
+			$('.posts').append($post);
 		}
 
 	});
