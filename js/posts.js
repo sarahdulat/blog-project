@@ -69,17 +69,28 @@ $('document').ready(function() {
 	}
 
 	// FILTER POSTS
-		$('ul.filter li').click(function() {
+		$('ul.filter li').on('click', function(e) {
 
-		tagName = $(this).attr('class');
+		var target = $(e.target);
+		var tagName = target.text();
 
-		$(".post").addClass("hidden");
-        $(".post:contains('" + tagName + "')").removeClass("hidden");
-
+		function sortPosts(tagName) {
+		$(".post").filter(":contains("+ tagName +")");
+		}
 
 	});
 
 });
+
+
+		// if (tagName) {
+		// 	$('.posts').append($post);
+		// } else {
+			// $('.post').empty();
+		// }
+
+		// $('.post').remove();
+  //       $('.posts').append($('div.post:contains(tagName)'));
 
 		// var target = $(e.target);
 		// var tagName = target.text();
