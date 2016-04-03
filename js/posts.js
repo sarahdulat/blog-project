@@ -35,8 +35,10 @@ var posts = [{
 // SHOW POSTS
 
 $('document').ready(function() {
-	
-	for (var i = 0; i < posts.length; i++) {
+
+	function populatePosts() {
+
+		for (var i = 0; i < posts.length; i++) {
 
 		var postConfig = posts[i];
 
@@ -68,23 +70,28 @@ $('document').ready(function() {
 
 	}
 
+	}
+
+	populatePosts();
+	
+
+
 	// FILTER POSTS
 		$('ul.filter li').on('click', function(e) {
 
 		var target = $(e.target);
 		var tagName = target.text();
 
-		// $('.post').remove();
+		posts.filter(function (filteredPost) {
+			return filteredPost.tags === tagName
+		});
 
-		if (posts.tags === tagName) {
-			$('.posts').append($post);
-		}
-
-	});
+		});
 
 });
 
 
+// GRAVEYARD
 		// if (tagName) {
 		// 	$('.posts').append($post);
 		// } else {
