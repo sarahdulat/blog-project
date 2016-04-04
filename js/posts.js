@@ -11,13 +11,13 @@ var posts = [{
     date: "February 10, 2016",
     imgSrc: "",
     copy: "<p>Up and running with the lectures! Today we talked about CSS and Terminal.</p>",
-    tags: ["class", "CSS", "Terminal", "coding"]
+    tags: ["class", "css", "Terminal", "coding"]
 }, {
     title: "Back to School",
     date: "January 20, 2016",
     imgSrc: "",
     copy: "<p>So after scouring the job boards in desperate search of anything but the hell I'm living (may sound dramatic, 100% valid), I finally signed up for LinkedIn Premium's trial version. With this feature I can see predicted job salaries for positions and where my resume stacks up against other applicants. This proved to be very disheartening as my field and chosen career appear to have been reduced to glorified powerpoint designers that make less than I do now (which is not a lot). Without some new skills I was going to be stuck here forever doing grunt production design until they outsourced us to India like they did with IT, accounting and customer service.</p><p>This is where NYCDA comes in. They ahd the perfect program, at the perfect price at the perfect location. I taught myself how to code HTML and CSS when I was 14 making websites for my Petz game in geocities (cringe). Since then I had gotten seduced by the glamour of graphic design a dn illustration, which was a completely plausible career choice until Steve Jobs came along with his iPad creationa dn destroyed the publication industry. Not like I blame him, but it kind of changed the game.</p><p>So here I am, back in school and gearing up to re-learn everything to todays standards so I can become hirable again. Wish me luck.</p>",
-    tags: ["job", "CSS", "programming", "coding", "school", "HTML", "NYCDA", "javascript", "jquery"]
+    tags: ["job", "css", "programming", "coding", "school", "html", "NYCDA", "javascript", "jquery"]
 }, {
     title: "Song of Spiderman by Glen Berger",
     date: "January 10, 2016",
@@ -36,7 +36,7 @@ var posts = [{
 
 $('document').ready(function() {
 
-    function populatePosts() {
+    function populatePosts(filterTag) {
 
         for (var i = 0; i < posts.length; i++) {
 
@@ -66,7 +66,18 @@ $('document').ready(function() {
                     $post.append($('<a href="javascript:;">' + '<li>' + postConfig.tags[j] + '</li>' + '</a>'));
                 }
             }
-            $('.posts').append($post);
+
+            if (typeof filterTag === "undefined" || postConfig.tags.indexOf(filterTag) > -1) {
+
+            	$('.posts').append($post);
+
+            }
+
+            //  if (typeof filterMonth === "undefined" || postConfig.date.indexOf(filterMonth) > -1) {
+
+            // 	$('.posts').append($post);
+
+            // }
 
         }
 
@@ -76,17 +87,30 @@ $('document').ready(function() {
 
 
 
-    // FILTER POSTS
-    $('ul.filter li').on('click', function(e) {
+    // FILTER POSTS BY TAG
+    $('ul.filter li, ul.mobile-filter li').on('click', function(e) {
 
         var target = $(e.target);
         var tagName = target.text();
 
-        posts.filter(function(filteredPost) {
-            return filteredPost.tags === tagName
-        });
+        $('.post').remove();
+
+        populatePosts(tagName);
 
     });
+
+    // // FILTER POSTS BY MONTH
+
+    // $('select option, ul.mobile-archive li').on('click', function(e) {
+
+    //     var target = $(e.target);
+    //     var monthName = target.value();
+
+    //     $('.post').remove();
+
+    //     populatePosts(monthName);
+
+    // });
 
 });
 
