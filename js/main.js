@@ -22,7 +22,7 @@ function close_box()
 
 	// BURGER-SHOW
 
-	$('#burger-show, ul.mobile-filter li').click(function() {
+	$('#burger-show, ul.mobile-filter li, ul.mobile-archive li').click(function() {
 		$('.dropdown').slideToggle(10);
 	});
 
