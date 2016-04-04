@@ -4,7 +4,7 @@ var posts = [{
     title: "Cookies..",
     date: "March 23, 2016",
     imgSrc: "https://s-media-cache-ak0.pinimg.com/736x/22/01/db/2201db191cd5654c19d9d25602e4af16.jpg",
-    copy: "<p>I wish this was about pinwheel cookies. East cost why can't I find these anywhere?</p><p>Broswer cookies are native and use a library to store data that identifies a returning user. I feel like everyone young and old has been acquainted with broswer cookies, knows what they do (but do we really?) and know that disabling them may mess some things up but do we want to keep them enabled? Who knows, I just leave them alone. Plus they're tasty.</p>",
+    copy: "<p>I wish this was about pinwheel cookies. East coast why can't I find these anywhere?</p><p>Broswer cookies are native and use a library to store data that identifies a returning user. I feel like everyone young and old has been acquainted with broswer cookies, knows what they do (but do we really?) and know that disabling them may mess some things up but do we want to keep them enabled? Who knows, I just leave them alone. Plus they're tasty.</p>",
     tags: ["cookies", "coding", "javascript", "browser"]
 }, {
     title: "Swifty JSON, we're just making up words now",
@@ -118,6 +118,7 @@ $('document').ready(function() {
             if (typeof filterTag === "undefined" || postConfig.tags.indexOf(filterTag) > -1) {
 
             	$('.posts').append($post);
+            	$('main, footer').hide().fadeIn();
 
             }
 
@@ -127,15 +128,14 @@ $('document').ready(function() {
 
     populatePosts();
 
-
-
     // FILTER POSTS BY TAG
+    
     $('ul.filter li, ul.mobile-filter li, div.post li').on('click', function(e) {
 
         var target = $(e.target);
         var tagName = target.text();
 
-        $('.post').remove();
+        $('.post').remove().hide().fadeOut();
 
         populatePosts(tagName);
 

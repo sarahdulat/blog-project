@@ -1,3 +1,5 @@
+$('document').ready(function() {
+
 function close_box()
 	{
 		$('.toaster').slideUp(500), function() {
@@ -43,5 +45,11 @@ function close_box()
 		return false;
 	});
 
+	// FOUC
+	$('html').ready(function() {
+		$('div.container').fadeIn();
+	});
+
+});
 
 
